@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Jeu USA States</title>
+	<meta charset="utf-8">
+	<!-- <script type="text/javascript" src="app.js"></script> -->
+
+	<style>
+	    *{margin: 0;
+	      padding: 0;
+	      box-sizing: border-box;}
+		body{background: black;
+		     color: pink;
+		     padding-top: 10px;
+		 }
+		ol, input{margin-left: 40%;
+		font-size: 24px;}
+		input{width: 200px;
+			  border-radius: 50%;
+			  border: black;
+		      height: 70px;
+		      padding-left: 40px;
+		      outline: none;
+		      margin-bottom: 20px;
+		      background: dodgerblue;
+		      }
+	    li{margin-left: 60px;}
+	    h1{color: white;
+	       font-size: 28px;
+	       margin-left: 35%;
+	       margin-bottom: 20px}
+
+	</style>
+</head>
+<body>
+
+	<h1>Liste des 50 Etats Américains</h1>
+
+	<input type="text" name="" placeholder="filtrer la liste" id="entree" onkeyup="myFunction()">
+
+	<ol id="liste">
+		<li>Alabama</li>
+		<li>Alaska</li>
+		<li>Arizona</li>
+		<li>Arkansas</li>
+		<li>Californie</li>
+		<li>Caroline du Nord</li>
+		<li>Caroline du Sud</li>
+		<li>Colorado</li>
+		<li>Connecticut</li>
+		<li>Dakota du Nord</li>
+		<li>Dakota du Sud</li>
+		<li>Delaware</li>
+		<li>Floride</li>
+		<li>Géorgie</li>
+		<li>Hawaï</li>
+		<li>Idaho</li>
+		<li>Illinois</li>
+		<li>Indiana</li>
+		<li>Iowa</li>
+		<li>Kansas</li>
+		<li>Kentucky</li>
+		<li>Louisiane</li>
+		<li>Maine</li>
+		<li>Maryland</li>
+		<li>Massachusetts</li>
+		<li>Michigan</li>
+		<li>Minnesota</li>
+		<li>Mississippi</li>
+		<li>Missouri</li>
+		<li>Montana</li>
+		<li>Nebraska</li>
+		<li>Nevada</li>
+		<li>New Hampshire</li>
+		<li>New Jersey</li>
+		<li>Nouveau-Mexique</li>
+		<li>New York</li>
+		<li>Ohio</li>
+		<li>Oklahoma</li>
+		<li>Oregon</li>
+		<li>Pennsylvanie</li>
+		<li>Rhode Island</li>
+		<li>Tennessee</li>
+		<li>Texas</li>
+		<li>Utah</li>
+		<li>Vermont</li>
+		<li>Virginie</li>
+		<li>Virgine-Occidentale</li>
+		<li>Washington</li>
+		<li>Wisconsin</li>
+		<li>Wyoming</li>
+
+	</ol>
+
+ <script>
+		function myFunction() {
+    // Declare variables
+    var input, filter, ol, li, a, i;
+    input = document.getElementById("entree");
+    filter = input.value.toUpperCase();
+    ol = document.getElementById("liste");
+    li = ol.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+};
+
+</script>
+
+<!-- Dans le cas d'une base de données : securiser les infos donc ne pas faire comme dans cet exo c'est-à-dire jouer sur le css avec display none pour masquer les elements : car code faux structurellement -->
+
+</body>
+</html>
